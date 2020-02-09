@@ -18,7 +18,7 @@ export default class Home extends React.Component {
                     { headerSubtitleComponent }
                 </header>
                 <section className="tiles">
-                    {_.map(_.orderBy(getPages(this.props.pageContext.pages, '/posts'), 'frontmatter.date', 'desc'), (post, post_idx) => (
+                    {_.map(_.orderBy(getPages(this.props.pageContext.pages, '/art'), 'frontmatter.date', 'desc'), (post, post_idx) => (
                         <article key={post_idx} className={_.get(post, 'frontmatter.home_style')}>
                             <span className="image">
                                 <img src={safePrefix(_.get(post, 'frontmatter.home_img'))} alt="" />
