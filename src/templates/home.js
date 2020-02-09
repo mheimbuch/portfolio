@@ -6,11 +6,16 @@ import {htmlToReact, getPages, safePrefix, Link, markdownify} from '../utils';
 
 export default class Home extends React.Component {
     render() {
+        const claim = _.get(this.props, 'pageContext.frontmatter.header')
+        const subtitle = _.get(this.props, 'pageContext.html')
+        const headerTitleComponent = claim ? <h1>{htmlToReact(claim.replace(/\n/g, '<br />'))}</h1> : null
+        const headerSubtitleComponent = subtitle ? htmlToReact(subtitle) : null
+
         return (
             <Layout {...this.props}>
                 <header>
-                    <h1>{htmlToReact(_.get(this.props, 'pageContext.frontmatter.header').replace(/\n/g, '<br />'))}</h1>
-                    {htmlToReact(_.get(this.props, 'pageContext.html'))}
+                    { headerTitleComponent }
+                    { headerSubtitleComponent }
                 </header>
                 <section className="tiles">
                     {_.map(_.orderBy(getPages(this.props.pageContext.pages, '/posts'), 'frontmatter.date', 'desc'), (post, post_idx) => (
