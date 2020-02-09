@@ -5,7 +5,6 @@ import _ from 'lodash';
 import {safePrefix} from '../utils';
 import Header from './Header';
 import Footer from './Footer';
-import Menu from './Menu';
 
 export default class Body extends React.Component {
     render() {
@@ -28,7 +27,6 @@ export default class Body extends React.Component {
                         </div>
                         <Footer {...this.props} />
                     </div>
-                    <Menu {...this.props} />
             </React.Fragment>
         );
     }
