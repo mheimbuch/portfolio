@@ -1,8 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 
-import {Layout} from '../components/index';
-import {htmlToReact, getPages, safePrefix, Link, markdownify} from '../utils';
+import {Layout, Tiles} from '../components';
+import {htmlToReact, getPages} from '../utils';
 
 export default class Home extends React.Component {
     render() {
@@ -17,21 +17,8 @@ export default class Home extends React.Component {
                     { headerTitleComponent }
                     { headerSubtitleComponent }
                 </header>
-                <section className="tiles">
-                    {_.map(_.orderBy(getPages(this.props.pageContext.pages, '/art'), 'frontmatter.date', 'desc'), (post, post_idx) => (
-                        <article key={post_idx} className={_.get(post, 'frontmatter.home_style')}>
-                            <span className="image">
-                                <img src={safePrefix(_.get(post, 'frontmatter.home_img'))} alt="" />
-                            </span>
-                            <Link to={safePrefix(_.get(post, 'url'))}>
-                                <h2>{_.get(post, 'frontmatter.title')}</h2>
-                                <div className="content">
-                                    {markdownify(_.get(post, 'frontmatter.excerpt'))}
-                                </div>
-                            </Link>
-                        </article>
-                    ))}
-                </section>
+                <Tiles tiles={_.orderBy(getPages(this.props.pageContext.pages, '/illustrations'), 'frontmatter.date', 'desc').slice(0, 3)} />
+                <Tiles tiles={_.orderBy(getPages(this.props.pageContext.pages, '/sketches'), 'frontmatter.date', 'desc').slice(0, 3)} />
             </Layout>
         );
     }

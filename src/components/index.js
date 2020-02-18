@@ -3,13 +3,15 @@ import Footer from './Footer';
 import Header from './Header';
 import Social from './Social';
 import Layout from './Layout';
+import Tiles from './Tiles';
 
 export {
     Contact,
     Footer,
     Header,
     Social,
-    Layout
+    Layout,
+    Tiles
 };
 
 export default {
@@ -17,5 +19,6 @@ export default {
     Footer,
     Header,
     Social,
-    Layout
+    Layout,
+    Tiles
 };
