@@ -1,8 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
 
-import {Link} from '../utils';
-
 export default class Social extends React.Component {
     render() {
         return (
