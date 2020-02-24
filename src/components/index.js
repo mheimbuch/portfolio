@@ -4,6 +4,8 @@ import Header from './Header';
 import Social from './Social';
 import Layout from './Layout';
 import Tiles from './Tiles';
+import Next from './Next';
+import Previous from './Previous';
 
 export {
     Contact,
@@ -11,7 +13,9 @@ export {
     Header,
     Social,
     Layout,
-    Tiles
+    Tiles,
+    Next,
+    Previous
 };
 
 export default {
@@ -20,5 +24,7 @@ export default {
     Header,
     Social,
     Layout,
-    Tiles
+    Tiles,
+    Next,
+    Previous
 };
