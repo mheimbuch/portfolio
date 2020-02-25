@@ -1,13 +1,22 @@
 import React from "react";
 import { previousPage } from "../utils";
 
+import styled from "styled-components"
+
+const Container = styled.div`
+    position: absolute;
+    top: 50%;
+    opacity: 0.8;
+    left: 5%;
+`;
+
 export default class Previous extends React.Component {
   render() {
     const previous = previousPage(this.props.pageContext);
 
     if (previous) {
       return (
-        <div className="page-navigation page-previous">
+        <Container>
           <a
             href={previous.url}
             title={previous.frontmatter.title}
@@ -15,7 +24,7 @@ export default class Previous extends React.Component {
           >
             <span class="label">To {previous.frontmatter.title}</span>
           </a>
-        </div>
+        </Container>
       );
     }
 
