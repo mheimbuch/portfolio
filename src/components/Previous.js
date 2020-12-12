@@ -22,7 +22,7 @@ export default class Previous extends React.Component {
             title={previous.frontmatter.title}
             className="icon fa-caret-left fa-5x"
           >
-            <span class="label">To {previous.frontmatter.title}</span>
+            <span className="label">To {previous.frontmatter.title}</span>
           </a>
         </Container>
       );

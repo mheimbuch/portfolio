@@ -22,7 +22,7 @@ export default class Next extends React.Component {
             title={next.frontmatter.title}
             className="icon fa-caret-right fa-5x"
           >
-            <span class="label">To {next.frontmatter.title}</span>
+            <span className="label">To {next.frontmatter.title}</span>
           </a>
         </Container>
       );

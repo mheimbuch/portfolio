@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import {Layout} from '../components';
+import {Layout, Next, Previous} from '../components';
 import {safePrefix, htmlToReact} from '../utils';
 
 export default class Page extends React.Component {
@@ -13,6 +13,9 @@ export default class Page extends React.Component {
                     <span className="image main"><img src={safePrefix(_.get(this.props, 'pageContext.frontmatter.img_src'))} alt="" /></span>
                 }
                 {htmlToReact(_.get(this.props, 'pageContext.html'))}
+     
+                <Previous {...this.props} />
+                <Next {...this.props} />
             </Layout>
         );
     }

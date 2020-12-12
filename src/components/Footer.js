@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import Contact from './Contact';
+import Links from './Links';
 import Social from './Social';
 import {htmlToReact, Link} from '../utils';
 
@@ -10,11 +10,12 @@ export default class Footer extends React.Component {
         return (
             <footer id="footer">
                 <div className="inner">
-                    {_.get(this.props, 'pageContext.site.data.contact.enabled') && 
-                        <Contact {...this.props} />
-                    }
+                    
                     {_.get(this.props, 'pageContext.site.data.social.enabled') && 
                         <Social {...this.props} />
+                    }
+                    {_.get(this.props, 'pageContext.site.data.links.enabled') && 
+                        <Links {...this.props} />
                     }
                     <ul className="copyright">
                         <li>
