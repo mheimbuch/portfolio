@@ -54,9 +54,7 @@
 			width: 100%;
 
 			img {
-				width: auto;
-				margin: 0 auto;
-				max-height: 80vh;
+				width: 100%;
 			}
 
 			@include breakpoint('<=small') {

@@ -6,11 +6,17 @@ import {safePrefix, htmlToReact} from '../utils';
 
 export default class Page extends React.Component {
     render() {
+        const style = {
+            width: 'auto',
+            margin: '0 auto',
+            'max-height': '70vh'
+        }
+
         return (
             <Layout {...this.props}>
                 <h1>{_.get(this.props, 'pageContext.frontmatter.title')}</h1>
                 {_.get(this.props, 'pageContext.frontmatter.img_src') && 
-                    <span className="image main"><img src={safePrefix(_.get(this.props, 'pageContext.frontmatter.img_src'))} alt="" /></span>
+                    <span className="image main"><img style={style} src={safePrefix(_.get(this.props, 'pageContext.frontmatter.img_src'))} alt="" /></span>
                 }
                 {htmlToReact(_.get(this.props, 'pageContext.html'))}
      
